@@ -27,7 +27,11 @@ class TodoList extends Component {
           {
             this.state.list.map((item, index) => {
               return (
-                <TodoItem content={item}></TodoItem>
+                <TodoItem 
+                  content={item} 
+                  index={index} 
+                  key={index}
+                  btnDel={this.btnDel.bind(this)}></TodoItem>
               )
             })
           }
