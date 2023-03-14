@@ -10,6 +10,8 @@ class TodoList extends Component {
       inputValue: '',
       list: ['学习', '尤克里里']
     }
+    this.inputChange = this.inputChange.bind(this)
+    this.btnClcik = this.btnClcik.bind(this)
   }
 
   render() {
@@ -20,8 +22,8 @@ class TodoList extends Component {
             className="input"
             type="text"
             value={this.state.inputValue}
-            onChange={this.inputChange.bind(this)} />
-          <button onClick={this.btnClcik.bind(this)}>提交</button>
+            onChange={this.inputChange} />
+          <button onClick={this.btnClcik}>提交</button>
         </div>
         <ul>
           {
@@ -41,7 +43,6 @@ class TodoList extends Component {
   }
 
   inputChange(e) {
-    console.log(e.target.value);
     this.setState({
       inputValue: e.target.value
     }

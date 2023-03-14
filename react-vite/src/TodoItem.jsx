@@ -8,15 +8,18 @@ class TodoItem extends Component{
   }
 
   render(){
+    const {content} = this.props
     return (
-      <div >{this.props.content}
+      <div >{content}
         <button  onClick={this.btnDel.bind(this)}>删除</button>
       </div>
     )
   }
   btnDel(){
-    this.props.btnDel(this.props.index)
+    const {btnDel,index} = this.props
+    btnDel(index)
   }
 }
+
 
 export default TodoItem
