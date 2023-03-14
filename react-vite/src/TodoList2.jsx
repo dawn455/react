@@ -4,6 +4,8 @@ import TodoItem from './TodoItem'
 
 
 class TodoList extends Component {
+  // 当组件的state或者props发生改变的时候render函数会重新渲染页面
+  // 当父组件的render函数被运行时，它的子组件的render都将被重新运行一次
   constructor(props) {
     super(props)
     this.state = {
