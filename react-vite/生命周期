@@ -1,0 +1,18 @@
+组件的生命周期是指组件从被创建到挂载到页面中运行起来，再到组件不用时写卸载的过程
+,注意：只有类组件才有生命周期（类组件实例化 函数组件不需要实例化）
+
+1.挂载阶段
+construct 》 render 》 componentDidMount
+
+construct---- 创建组件时，最先执行，初始化的时候只执行一次----1.初始化state 2.创建Ref 3.使用bind解决this指向
+render----每次组件渲染都会触发----渲染UI（不能在里面调setState（））
+componentDidMount----组件挂载后执行，初始化的时候执行一次----1.发送网络请求2.DOM操作
+
+2.更新阶段
+render 》componentDidUpdate
+render----每次组件渲染都会触发----渲染UI(与挂载阶段是同一个render)
+》componentDidUpdate----组件更新后----DOM操作，可以获取更新后的DOM内容，不要直接调用setState
+
+3.卸载阶段
+componentWillUnmount
+componentWillUnmount----组件卸载(从页面中消失)----执行清理工作(例如：清理定时器等)
